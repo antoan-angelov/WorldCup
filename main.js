@@ -5,6 +5,8 @@ $(document).ready(function() {
 
     generateMatchedForToday(matches);
 
+    $('[data-toggle="popover"]').popover();
+
   });
 
   function generateMatchedForToday(matches) {

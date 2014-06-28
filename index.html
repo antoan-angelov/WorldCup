@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js" ></script>
+	<script src="handlebars-helpers.js"></script>
 	<script src="main.js"></script>
 	<style type="text/css">
 	.centered {
@@ -50,12 +51,17 @@
 	<script id="match-template" type="text/x-handlebars-template">
 	{{#matches}}
 	  <div class="card well">
+	  {{#isInProgress status}}
 		<div class="progress">
 		  <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
 		    <span class="sr-only">20% Complete</span>
 		  </div>
 		</div>
 		<div class="centered">55 mins left.</div>
+		{{else}}
+		<div class="centered">Match starts at {{datetime}}</div>
+		{{/isInProgress}}
+		
 		<div class="country left">
 			<span class="country-name">{{home_team.country}}</span>
 			<a href="#" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" >

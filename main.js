@@ -9,7 +9,7 @@ $(document).ready(function() {
 
   });
 
-  function generateMatchedForToday(matches) {
+  function generateMatchesForToday(matches) {
     var source = $('#match-template').text(),
         template = Handlebars.compile(source),
         html = template({

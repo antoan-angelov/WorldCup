@@ -3,14 +3,14 @@ $(document).ready(function() {
 
   $.getJSON('http://worldcup.sfg.io/matches/today', function(matches) {
 
-    generateMatchedForToday(matches);
+    generateMatchesForToday(matches);
 
     $('[data-toggle="popover"]').popover();
 
   });
 
-  function generateMatchedForToday(matches) {
-    var source = $('#match-template'),
+  function generateMatchesForToday(matches) {
+    var source = $('#match-template').text(),
         template = Handlebars.compile(source),
         html = template({
           matches: matches

@@ -6,3 +6,16 @@ Handlebars.registerHelper('isInProgress', function(conditional, options) {
     return options.inverse(this);
   }
 });
+
+Handlebars.registerHelper('formatToBgDate', function(date) {
+  'use strict';
+  var parsedDate = new Date(date),
+      options = {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric'};
+
+  return parsedDate.toLocaleString('bg-BG', options);
+});

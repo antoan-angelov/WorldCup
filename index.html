@@ -1,0 +1,80 @@
+<!DOCTYPE>
+<html>
+<head>
+	<script src="bower_components/handlebars/handlebars.min.js"></script>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js" ></script>
+	<script src="handlebars-helpers.js"></script>
+	<script src="main.js"></script>
+	<style type="text/css">
+	.centered {
+		text-align: center;
+	}
+
+	.card {
+		width: 600px;
+	}
+
+	.country {
+		display: inline-block;		
+	}
+
+	.country.right {
+		margin-left: 100px;
+	}
+
+	.country.left {
+		margin-left: 20px;
+	}
+
+	.country.left .country-name {
+		text-align: right;
+	}
+
+	.country-name {
+		width: 69px;
+		display: inline-block;
+	}
+	</style>
+</head>
+<body>
+	<script id="match-template" type="text/x-handlebars-template">
+	{{#matches}}
+	  <div class="card well">
+	  {{#isInProgress status}}
+		<div class="progress" data-time="{{datetime}}">
+		  <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+		    <span class="sr-only">20% Complete</span>
+		  </div>
+		</div>
+		<div id="statusLabel" class="centered">55 mins left.</div>
+		{{else}}
+		<div class="centered">Match starts at {{formatToBgDate datetime}}</div>
+		{{/isInProgress}}
+		
+		<div class="country left">
+			<div class="country-name">{{home_team.country}}</div>
+			<a href="#" data-toggle="popover" title="{{home_team.country}}" data-content="{{home_team.country}} is in {{home_team.info.group_letter}} group. With {{home_team.info.wins}} wins, {{home_team.info.losses}} losses and {{home_team.info.games_played}} games played." >
+				<img src="flags/{{home_team.code}}.png"/>
+			</a>
+			<span class="country-score">{{home_team.goals}}</span>
+		</div>
+
+		<div class="country right">
+			<span class="country-score">{{away_team.goals}}</span>
+			<a href="#" data-toggle="popover" title="{{away_team.country}}" data-content="{{away_team.country}} is in {{away_team.info.group_letter}} group. With {{away_team.info.wins}} wins, {{away_team.info.losses}} losses and {{away_team.info.games_played}} games played." >
+				<img src="flags/{{away_team.code}}.png" />
+			</a>
+			<div class="country-name">{{away_team.country}}</div>
+		</div>
+
+	</div>
+	{{/matches}}
+	</script>
+
+	<div id="match-container"></div>
+
+</body>
+</html>

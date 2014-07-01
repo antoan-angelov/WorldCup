@@ -1,7 +1,7 @@
 $(document).ready(function() {
   'use strict';
 
-  var countries;
+  var countries = [];
 
   $.getJSON('http://worldcup.sfg.io/teams/results', function(results) {
 
@@ -12,7 +12,7 @@ $(document).ready(function() {
     countries.push('</option>');
 
     for(var i = 0; i < 2; i += 1) {
-      generateCountryResults(result[i]);
+      generateCountryResults(results[i]);
     }
 
   });

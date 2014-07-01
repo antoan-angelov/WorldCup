@@ -60,9 +60,9 @@ $(document).ready(function() {
   function addColorClasses($elements, maxIndex) {
     $elements.each(function(index, el) {
       if (index === maxIndex) {
-        $(el).addClass('alert-success');
+        $(el).parent().addClass('alert-success');
       } else {
-        $(el).addClass('alert-danger');
+        $(el).parent().addClass('alert-danger');
       }
     });
   }

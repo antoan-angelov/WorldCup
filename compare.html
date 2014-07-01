@@ -13,31 +13,33 @@
 	.team-cont {
 		float: left;
 		width: 200px;
+		margin: 10px;
 	}
 	select {
 		padding: 5px;
+		width: 100%;
 	}
 
-	#main-cont {
+	#compare-container {
 		height: 400px;
 		width:800px;
 	}
 	</style>
 </head>
 <body>
+	<script id="compare-template" type="text/x-handlebars-template">		
+		<div class="team-cont new-team">
+			<select class="country-select">
+			</select>
 
-	
+			<div class="alert alert-success" role="alert">Wins: {{wins}}</div>
+			<div class="alert alert-success" role="alert">Losses: {{losses}}</div>
+			<div class="alert alert-success" role="alert">Draws: {{draws}}</div>
+			<div class="alert alert-success" role="alert">Points: {{points}}</div>
 
-	<script id="compare-template" type="text/x-handlebars-template">
-		<div id="main-cont" class="well">
-			<div class="team-cont new-team">
-				<select class="country-select">
-					<option value="null">Select a country</option>
-				</select>
-			</div>
-		</div>
+		</div>		
 	</script>
 
-	<div id="compare-container"></div>
+	<div id="compare-container" class="well"></div>
 </body>
 </html>

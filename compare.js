@@ -1,19 +1,17 @@
 $(document).ready(function() {
   'use strict';
 
-  var countries;
+  var countries = [];
 
   $.getJSON('http://worldcup.sfg.io/teams/results', function(results) {
 
-    countries.push('<option>');
     results.forEach(function(item) {
-      countries.push(item.country);
+      countries.push('<option>', item.country, '</option>');
     });
-    countries.push('</option>');
 
-    for(var i = 0; i < 2; i += 1) {
-      generateCountryResults(result[i]);
-    }
+    [0, 1].forEach(function(item) {
+      generateCountryResults(results[item]);
+    });
 
   });
 

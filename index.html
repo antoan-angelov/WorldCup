@@ -55,7 +55,7 @@
 		{{/isInProgress}}
 		
 		<div class="country left">
-			<div class="country-name">{{home_team.country}}</div>
+			<a href="team.html?id={{home_team.info.id}}"><div class="country-name">{{home_team.country}}</div></a>
 			<a href="#" data-toggle="popover" title="{{home_team.country}}" data-content="{{home_team.country}} is in {{home_team.info.group_letter}} group. With {{home_team.info.wins}} wins, {{home_team.info.losses}} losses and {{home_team.info.games_played}} games played." >
 				<img src="flags/{{home_team.code}}.png"/>
 			</a>
@@ -67,7 +67,7 @@
 			<a href="#" data-toggle="popover" title="{{away_team.country}}" data-content="{{away_team.country}} is in {{away_team.info.group_letter}} group. With {{away_team.info.wins}} wins, {{away_team.info.losses}} losses and {{away_team.info.games_played}} games played." >
 				<img src="flags/{{away_team.code}}.png" />
 			</a>
-			<div class="country-name">{{away_team.country}}</div>
+			<a href="team.html?id={{away_team.info.id}}"><div class="country-name">{{away_team.country}}</div></a>
 		</div>
 
 	</div>

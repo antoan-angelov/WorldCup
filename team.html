@@ -11,63 +11,65 @@
 	<title></title>
 
 	<style type="text/css">
-	.mytable {
-		width:600px;
+	table {
+		margin: 0 auto 0 auto;
 	}
-	td {
-		width: 50%;
+	td, th {
+		padding: 15px;
+	}
+	th {
+		/*text-align: center;*/
 	}
 	</style>
 </head>
 <body>
-
-<table class="table mytable">
-	<tr>
-		<th colspan="2" align="middle">Brazil (BRA)</th>
-	</tr>
-	<tr>
-		<td align="right">Group</td>
-		<td>A</td>
-	</tr>
-	<tr>
-		<td align="right">Wins</td>
-		<td>3</td>
-	</tr>
-	<tr>
-		<td align="right">Draws</td>
-		<td>1</td>
-	</tr>
-	<tr>
-		<td align="right">Losses</td>
-		<td>0</td>
-	</tr>
-	<tr>
-		<td align="right">Games Played</td>
-		<td>4</td>
-	</tr>
-	<tr>
-		<td align="right">Points</td>
-		<td>10</td>
-	</tr>
-	<tr>
-		<td align="right">Goals For</td>
-		<td>8</td>
-	</tr>
-	<tr>
-		<td align="right">Goals Against</td>
-		<td>3</td>
-	</tr>
-	<tr>
-		<td align="right">Goal Differential</td>
-		<td>5</td>
-	</tr>
-</table>
-
-<!-- country":"Brazil","alternate_name":null,"fifa_code":"BRA","group_id":1,"group_letter":"A","wins":3,"draws":1,"losses":0,"games_played":4,"points":10,"goals_for":8,"goals_against":3,"goal_differential":5 
 	<script id="team-template" type="text/x-handlebars-template">
-		
+		<table >
+			<tr>
+				<th colspan="2" align="center">{{country}} ({{fifa_code}})</th>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><img src="flags/{{fifa_code}}.png"/></td>
+			</tr>
+			<tr>
+				<td>Group</td>
+				<td>{{group_letter}}</td>
+			</tr>
+			<tr>
+				<td>Wins</td>
+				<td>{{wins}}</td>
+			</tr>
+			<tr>
+				<td>Draws</td>
+				<td>{{draws}}</td>
+			</tr>
+			<tr>
+				<td>Losses</td>
+				<td>{{losses}}</td>
+			</tr>
+			<tr>
+				<td>Games Played</td>
+				<td>{{games_played}}</td>
+			</tr>
+			<tr>
+				<td>Points</td>
+				<td>{{points}}</td>
+			</tr>
+			<tr>
+				<td>Goals For</td>
+				<td>{{goals_for}}</td>
+			</tr>
+			<tr>
+				<td>Goals Against</td>
+				<td>{{goals_against}}</td>
+			</tr>
+			<tr>
+				<td>Goal Differential</td>
+				<td>{{goal_differential}}</td>
+			</tr>
+		</table>
 	</script>
 
-	<div id="team-container"></div>-->
+	<div id="team-container"></div>
 </body>
 </html>

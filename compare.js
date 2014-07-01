@@ -9,19 +9,20 @@ $(document).ready(function() {
       countries.push('<option>', item.country, '</option>');
     });
 
-    [0, 1].forEach(function(item) {
-      generateCountryResults(results[item]);
+    [0, 1].forEach(function(item, index) {
+      generateCountryResults(results[item], index);
     });
 
   });
 
-  function generateCountryResults(result) {
+  function generateCountryResults(result, index) {
     var source = $('#compare-template').html(),
         template = Handlebars.compile(source),
         generatedHTML = template(result);
 
     $('#compare-container').append(generatedHTML);
     $('.new-team').find('select').first().append(countries.join(''));
+    $('.new-team').find('select').first().find('option').eq(index).val(result.country);
     $('.new-team').removeClass('new-team');
   }
 

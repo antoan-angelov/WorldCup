@@ -6,24 +6,22 @@ $(document).ready(function() {
   $.getJSON('http://worldcup.sfg.io/teams/results', function(results) {
 
     results.forEach(function(item) {
-      countries.push('<option>', item.country, '</option>');
+      countries.push('<option value=\''+item.country+'\'>', item.country, '</option>');
     });
 
-    [0, 1].forEach(function(item, index) {
-      generateCountryResults(results[item], index);
+    [0, 1].forEach(function(item) {
+      generateCountryResults(results[item]);
     });
   });
 
-  function generateCountryResults(result, index) {
+  function generateCountryResults(result) {
     var source = $('#compare-template').html(),
         template = Handlebars.compile(source),
         generatedHTML = template(result);
 
     $('#compare-container').append(generatedHTML);
     $('.new-team').find('select').first().append(countries.join(''));
-    $('.new-team').find('select').first().find('option').eq(index).val(result.country);
+    $('.new-team').find('select').first().find('option').eq(result.id-1).prop('selected', true);
     $('.new-team').removeClass('new-team');
-    $('.new-team').find('select').find('options')[index].attr('selected');
   }
-
 });

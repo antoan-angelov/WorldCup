@@ -22,15 +22,21 @@
 
 	#compare-container {
 		height: 400px;
+	}
+
+	#add-team {
+	}
+
+	#cont, #compare-container {
 		width:800px;
 	}
+
 	</style>
 </head>
 <body>
 	<script id="compare-template" type="text/x-handlebars-template">		
 		<div class="team-cont new-team">
-			<select class="country-select">
-			</select>
+			<select class="country-select"></select>
 
 			<div class="alert wins" role="alert">Wins: {{wins}}</div>
 			<div class="alert losses" role="alert">Losses: {{losses}}</div>
@@ -40,8 +46,13 @@
 		</div>		
 	</script>
 
-	<div id="compare-container" class="well"></div>
+	<div id="cont">
+		<span>HackBulgaria World Cup</span>
+		<button type="button" class="btn btn-primary btn-lg" >Home</button>
 
-	<button type="button" class="btn btn-primary btn-lg" id="add-team">Add team</button>
+	
+		<div id="compare-container" class="well"></div>
+		<button type="button" class="btn btn-primary btn-lg" id="add-team">Add a team</button>
+	</div>
 </body>
 </html>

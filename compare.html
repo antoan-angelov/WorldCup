@@ -9,8 +9,37 @@
 	<script src="handlebars-helpers.js"></script>
 	<script src="compare.js"></script>
 	<title></title>
+	<style type="text/css">
+	.team-cont {
+		float: left;
+		width: 200px;
+	}
+	select {
+		padding: 5px;
+	}
+
+	#main-cont {
+		height: 400px;
+		width:800px;
+	}
+	</style>
 </head>
 <body>
 
+	<div id="main-cont" class="well">
+		<div class="team-cont new-team">
+			<select class="country-select">
+				<option value="null">Select a country</option>
+			</select>
+			<div class="alert alert-danger" role="alert">Wins: 3</div>
+			<div class="alert alert-danger" role="alert">Losses: 3</div>
+		</div>
+	</div>
+
+	<script id="compare-template" type="text/x-handlebars-template">
+				
+	</script>
+
+	<div id="compare-container"></div>
 </body>
 </html>

@@ -17,6 +17,15 @@
 	td, th {
 		padding: 15px;
 	}
+
+	td:nth-child(odd) {
+		background-color: #E0E0E0;
+	}
+
+	td:nth-child(even) {
+		background-color: #C7C7C7;
+	}
+
 	th {
 		/*text-align: center;*/
 	}
@@ -24,12 +33,10 @@
 </head>
 <body>
 	<script id="team-template" type="text/x-handlebars-template">
-		<table >
+		
+		<table cellspacing="15">
 			<tr>
-				<th colspan="2" align="center">{{country}} ({{fifa_code}})</th>
-			</tr>
-			<tr>
-				<td colspan="2" align="center"><img src="flags/{{fifa_code}}.png"/></td>
+				<th colspan="2" align="center">{{country}} ({{fifa_code}}) </br> <img src="flags/{{fifa_code}}.png"/></th>
 			</tr>
 			<tr>
 				<td>Group</td>

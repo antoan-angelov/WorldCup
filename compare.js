@@ -21,6 +21,7 @@ $(document).ready(function() {
 
     $('#compare-container').append(generatedHTML);
     $('.new-team').find('select').first().append(countries.join(''));
+    $('.new-team').find('select').first().find('option').eq(index).val(result.country);
     $('.new-team').removeClass('new-team');
     $('.new-team').find('select').find('options')[index].attr('selected');
   }

@@ -23,5 +23,49 @@ $(document).ready(function() {
     $('.new-team').find('select').first().append(countries.join(''));
     $('.new-team').find('select').first().find('option').eq(result.id-1).prop('selected', true);
     $('.new-team').removeClass('new-team');
+
+    recolorResults();
   }
+
+  function recolorResults() {
+    var $wins = $('div').filter('.wins'),
+        $loses = $('div').filter('.losses'),
+        $draws = $('div').filter('.draws'),
+        $points = $('div').filter('.points');
+
+    var maxWinsIndex = findMax($wins),
+        maxLosesIndex = findMax($loses),
+        maxDrawsIndex = findMax($draws),
+        maxPointsIndex = findMax($points);
+
+    addColorClasses($wins, maxWinsIndex);
+    addColorClasses($loses, maxLosesIndex);
+    addColorClasses($draws, maxDrawsIndex);
+    addColorClasses($points, maxPointsIndex);
+  }
+
+  function findMax($divs) {
+    var max = parseInt($divs.first().text(), 10),
+        maxIndex = 0;
+
+    $divs.each(function(index, item) {
+      if (parseInt($(item).text(), 10) > max) {
+        max = parseInt($(item).text(), 10);
+        maxIndex = index;
+      }
+    });
+
+    return maxIndex;
+  }
+
+  function addColorClasses($divs, maxIndex) {
+    $divs.each(function(index, el) {
+      if (index === maxIndex) {
+        $(el).addClass('alert-success');
+      } else {
+        $(el).addClass('alert-danger');
+      }
+    });
+  }
+
 });

@@ -22,26 +22,46 @@
 
 	#compare-container {
 		height: 400px;
+	}
+
+	#add-team {
+	}
+
+	#cont, #compare-container {
 		width:800px;
 	}
+
+	#label {
+		font-size: 30pt;
+	}
+
+	#home {
+		float: right;
+		margin-top: 5px;
+	}
+
 	</style>
 </head>
 <body>
 	<script id="compare-template" type="text/x-handlebars-template">		
 		<div class="team-cont new-team">
-			<select class="country-select">
-			</select>
+			<select class="country-select"></select>
 
-			<div class="alert wins" role="alert">Wins: {{wins}}</div>
-			<div class="alert losses" role="alert">Losses: {{losses}}</div>
-			<div class="alert draws" role="alert">Draws: {{draws}}</div>
-			<div class="alert points" role="alert">Points: {{points}}</div>
+			<div class="alert" role="alert">Wins: <span class="wins">{{wins}}</span></div>
+			<div class="alert" role="alert">Losses: <span class="losses">{{losses}}</span></div>
+			<div class="alert" role="alert">Draws: <span class="draws">{{draws}}</span></div>
+			<div class="alert" role="alert">Points: <span class="points">{{points}}</span></div>
 
 		</div>		
 	</script>
 
-	<div id="compare-container" class="well"></div>
+	<div id="cont">
+		<span id="label">HackBulgaria World Cup</span>
+		<button type="button" class="btn btn-primary btn-lg" id="home">Home</button>
 
-	<button type="button" class="btn btn-primary btn-lg" id="add-team">Add team</button>
+	
+		<div id="compare-container" class="well"></div>
+		<button type="button" class="btn btn-primary btn-lg" id="add-team">Add a team</button>
+	</div>
 </body>
 </html>

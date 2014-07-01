@@ -9,7 +9,7 @@ $(document).ready(function() {
       countries.push('<option value=\''+item.country+'\'>', item.country, '</option>');
     });
 
-    [0, 1].forEach(function(item) {
+    [0, 5].forEach(function(item) {
       generateCountryResults(results[item]);
     });
     recolorResults();

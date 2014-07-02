@@ -11,7 +11,7 @@ $(document).ready(function() {
       countries.push('<option value=\''+item.country+'\'>', item.country, '</option>');
     });
 
-    [0, 3].forEach(function(item) {
+    [0, 1].forEach(function(item) {
       generateCountryResults(results[item]);
     });
 
@@ -29,6 +29,20 @@ $(document).ready(function() {
 
       changeCuntryResults(countryResults, $(this).parent());
 
+    });
+
+    var initialCompareContHeight = $('#compare-container').height();
+
+    $('#add-team').click(function() {
+      generateCountryResults(results[0]);
+      recolorResults();
+      var numTeams = $('.team-cont').length;
+      var numRows = Math.floor((numTeams-1) / 3) + 1;
+      console.log("numTeams=", numTeams, "numRows=", numRows);
+      $('#compare-container').height(initialCompareContHeight + (numRows-1) * 338);
+      if(numRows == 1 && numTeams == 3) {
+        $('#cont').width('800px');
+      }
     });
 
   });
